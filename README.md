@@ -63,4 +63,32 @@ After wireshark is installed. Open the app select ethernet interface & start a p
 
 Filter ICMP traffic on wireshark & grab the Linux Private IP address from azure. Run Power Shell on the Windows VM & Ping the Linux VM Private IP address. Observe the trafffic in Wireshark. Ping is used for testing network connectivity by sending packets of data and measuring the response time.
 
+![Screenshot 2024-10-28 150603](https://github.com/user-attachments/assets/1ddec140-5b70-4af3-897f-afe3e918e988)
+
+
+From within the Windows VM Ping "Google.com" & Obeserve the ICMP traffic inside WireShark
+
+![Screenshot 2024-10-28 151603](https://github.com/user-attachments/assets/52b85815-3919-4774-a3e3-9bca94ab9267)
+
+![Screenshot 2024-10-28 151856](https://github.com/user-attachments/assets/a75777ed-bff2-4560-9c5f-b6ccefe64da0)
+
+in Azure Configure Network Security Rule To Deny ICMP traffic. 
+
+Azure > Linux-VM > Networking > Network Settings 
+
+Then click "Linux-vm-nsg" in the top right. 
+
+Settings > Inbound Security rules > Add new rule. 
+
+![Screenshot 2024-10-28 152809](https://github.com/user-attachments/assets/cf54d092-4e43-4cd7-a66d-71dd70ca4637)
+
+Observing the traffic from the windows VM. you can see the new security rule in the Linux VM is now blocking the ICMP traffic causing the request to be timed out.  
+
+![Screenshot 2024-10-28 155349](https://github.com/user-attachments/assets/e1d1e702-325f-40c8-a816-7c211e0ef171)
+
+Filter SSH traffic in wireshark
+
+From the Window VM, Connect to the linux VM through SSH & Observe the traffic in Wireshark. you can see we sucessfully made a secure connection to the Linux VM & can see everything that happening on the backend through wireshark.
+
+
 
