@@ -88,7 +88,16 @@ Observing the traffic from the windows VM. you can see the new security rule in 
 
 Filter SSH traffic in wireshark
 
-From the Window VM, Connect to the linux VM through SSH & Observe the traffic in Wireshark. you can see we sucessfully made a secure connection to the Linux VM & can see everything that happening on the backend through wireshark.
+From the Window VM, Connect to the linux VM through SSH & Observe the traffic in Wireshark. you can see we sucessfully made a secure connection to the Linux VM & can see everything that happening on the backend through wireshark. (SSH uses TCP Port 22)
+
+![Screenshot 2024-10-28 161808](https://github.com/user-attachments/assets/d717998d-5ebd-433e-bef0-58ff06c4f1f5)
+
+From the Windows VM Power shell command line, type "Nslookup" Google.com & Disney.com & observe the DNS traffic in wireshark. DNS is used to convert IP address into Domain Names & vice versa.  (DNS uses Port 53 TCP & UDP)
+
+![Screenshot 2024-10-28 162837](https://github.com/user-attachments/assets/2b354611-f97f-43a4-a95b-8bb37101ba37)
+
+RDP (Remote Desktop) traffic in wireshark constant spam. The RDP (protocol) is constantly showing you a live stream from one computer to another, therefor traffic is always being transmitted. RDP uses (tcp.port == 3389)
+
 
 
 
